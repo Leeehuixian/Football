@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	    <meta content="telephone=no" name="format-detection" />
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	    <title>足球圈子 — 注册</title>
+	    <link rel="stylesheet" href="css/reset.css" />
+	    <link rel="stylesheet" href="css/common.css" />
+	    <link rel="stylesheet" href="css/register.css" />
+	    <script src="js/zepto.min.js"></script>
+	</head>
+	<body>
+		<header>足球圈子 — 注册</header>
+		<div class="form">
+			<input id="mobile" type="text" placeholder="手机号" value="" />
+			<input id="pwd" class="mt_23" type="password" placeholder="密码" value="" />
+			<input id="name" class="mt_23" type="text" placeholder="昵称" value="" />
+			<button id="btn_reg" class="btn_reg">
+				<span>提交</span>
+			</button>
+		</div>
+		<script type="text/javascript">
+			$("#btn_reg").on("tap",function(e){
+				e.preventDefault();
+				var mobile = $("#mobile").val();
+				var pwd = $("#pwd").val();
+				var name = $("#name").val();
+				// if(!/^(13[0-9]|14[0-9]|15[0-9]|18[0-9])\d{8}$/i.test(mobile)){
+				// 	alert("请输入有效的手机号！");
+				// }else{
+				if(true){
+					$.ajax({
+						url:"http://localhost:8080/Proxy/FootBall/user/json/reg.do",
+						data:{"loginname":mobile,"password":pwd,"nickname":name},
+						success:function(d){
+							window.location.href = "login.html";
+						}
+					});
+				}
+			})
+		</script>
+		</body>
+</html>

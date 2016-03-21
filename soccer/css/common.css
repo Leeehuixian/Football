@@ -1,0 +1,118 @@
+html{background:#f8f8f8;}
+body{background:#fff;}
+html,body{width:100%;height:100%;max-width: 640px;}
+header{width:100%;height:37px;line-height:37px;text-align:center;font-size:17px;color:#fff;background:#0f91c5;}
+.form{
+	margin:0 15px;
+}
+.form input{
+	width:100%;
+	height:33px;
+	line-height:33px;
+	border-bottom:1px solid #7f7f7f;
+}
+.form input:nth-child(1){
+	margin-top:9px;
+}
+.form input.mt_27{
+	margin-top:27px;
+}
+.form .links{
+	width:100%;
+	height:65px;
+}
+.form .links a{
+	line-height:65px;
+	font-size:12px;
+	color:#61b7da;
+	text-decoration: underline;
+}
+.form .links a:nth-child(2){
+	float:right;
+}
+.form button,.form .btn_reg,.form .btn_fgt{
+	width:100%;
+	height:39px;
+	margin-top:12px;
+	background:#0f91c5;
+	text-align: center;
+	color:#fff;
+	border:none;
+	font-size:17px;
+	letter-spacing: 34px;
+}
+
+.form button span{
+	margin-left:34px;
+}
+
+/*底部导航*/
+footer{
+	width:100%;
+	height:46px;
+	background:#fff;
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	overflow: hidden;
+}
+footer ul{
+	width:100%;
+	height:100%;
+}
+footer ul li{
+	width:20%;
+	height:40px;
+	float:left;
+}
+footer a{
+	margin:0 auto;
+	display:block;
+	width:40px;
+	height:40px;
+	text-align: center;
+	font-size:12px;
+	color:#dddddd;	
+}
+footer a.active{
+	color:#0f91c5;
+}
+footer a i{
+	display:block;
+	width:15px;
+	height:14px;
+	margin:5px auto;
+}
+footer a i.home{
+	background:url('../images/a_bg_01.png') no-repeat;
+	background-size:100% 100%;
+}
+footer a i.find{
+	background:url('../images/a_bg_04.png') no-repeat;
+	background-size:100% 100%;
+}
+footer a i.my{
+	background:url('../images/a_bg_05.png') no-repeat;
+	background-size:100% 100%;
+}
+footer a i.live{
+	background:url('../images/a_bg_07.png') no-repeat;
+	background-size:100% 100%;	
+}
+footer a.camera_wrap{
+	width:43px;
+	height:43px;
+	border-radius: 50%;
+	border:1px solid #dedede;
+	margin-top:-5px;
+	margin-left:8px;
+	background:#fff;
+}
+footer a i.camera{
+	width:25px;
+	height:20px;
+	background:url('../images/a_bg_08.png') no-repeat;
+	background-size:100% 100%;	
+	margin-left:9px;
+	margin-top:10px;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    	<meta content="telephone=no" name="format-detection" />
+		<meta charset="utf-8">
+		<title>关注</title>
+		<link rel="stylesheet" href="css/reset.css" />
+    	<link rel="stylesheet" href="css/index_2.css" />
+    	
+	</head>
+	<body>
+		<header>
+			<a class="hot" href="index_1.html">热点</a>
+			<a class="atn" href="index_2.html">关注</a>
+		</header>
+		<div class="main" id="scroller">
+			<div>
+				<div class="atn_list">
+					<dl>
+						<dt>
+							<img src="images/header_icon.jpg" />
+						</dt>
+						<dd>
+							<p>我叫小萌
+								<a href="###"></a>
+								<span>382344</span>
+								
+							</p>
+							<p>我是小萌我怕谁!哈哈哈哈！</p>
+						</dd>
+					</dl>
+					<img class="show" src="images/atn_1.jpg" />
+					<p class="pic_tit">小丸子啊小丸子</p>
+				</div>
+				<div class="atn_list">
+					<dl>
+						<dt>
+							<img src="images/header_icon_2.jpg" />
+						</dt>
+						<dd>
+							<p>Lily
+								<a href="###"></a>
+								<span>382344</span>
+								
+							</p>
+							<p>Hello~ my name is Lily!</p>
+						</dd>
+					</dl>
+					<img class="show" src="images/pic_06.gif" />
+					<p class="pic_tit">小丸子啊小丸子</p>
+				</div>
+			</div>	
+		</div>
+		<footer>
+			<ul>
+				<li>
+					<a class="active" href="index_1.html">
+						<i class="home"></i>
+						首页
+					</a>
+				</li>
+				<li>
+					<a href="find.html">
+						<i class="find"></i>
+						发现
+					</a>
+				</li>
+				<li>
+					<a href="###" class="camera_wrap">
+						<i class="camera"></i>
+						
+					</a>
+				</li>
+				<li>
+					<a href="person_center.html">
+						<i class="my"></i>
+						我的
+					</a>
+				</li>
+				<li>
+					<a href="###">
+						<i class="live"></i>
+						退出
+					</a>
+				</li>
+			</ul>
+		</footer>
+		<script src="js/zepto.min.js"></script>
+		<script src="js/iscroll.js"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				var hHeight = $("header").height();
+				var fHeight = $("footer").height();
+				var $Height = $(window).height() - hHeight - fHeight-20;
+				$(".main").height($Height);
+				var scroll = new iScroll("scroller",{
+					hScrollbar:false, 
+					vScrollbar:false,
+				});
+				scroll.refresh();
+
+			}
+		</script>
+	</body>
+</html>

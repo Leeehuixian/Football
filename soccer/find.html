@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+   		<meta content="telephone=no" name="format-detection" />
+		<meta charset="UTF-8">
+		<title>发现</title>
+		<link rel="stylesheet" href="css/reset.css" />
+    	<link rel="stylesheet" href="css/find.css" />
+		
+	</head>
+	<body>
+		<header>发现</header>
+		<div class="search">
+			<input id="name" type="text" placeholder="请输入昵称" value=""/>
+			<input id="btn" type="button" value="搜索" />
+		</div>
+		<div class="main" id="scroller">
+			<div></div>
+		</div>
+		<footer>
+			<ul>
+				<li>
+					<a href="index_1.html">
+						<i class="home"></i>
+						首页
+					</a>
+				</li>
+				<li>
+					<a class="active" href="find.html">
+						<i class="find"></i>
+						发现
+					</a>
+				</li>
+				<li>
+					<a href="###" class="camera_wrap">
+						<i class="camera"></i>
+						
+					</a>
+				</li>
+				<li>
+					<a href="personal_center.html">
+						<i class="my"></i>
+						我的
+					</a>
+				</li>
+				<li>
+					<a href="###">
+						<i class="live"></i>
+						退出
+					</a>
+				</li>
+			</ul>
+		</footer>
+		<script src="js/zepto.min.js"></script>
+		<script src="js/iscroll.js"></script>
+		<script type="text/javascript">
+			var scroll = new iScroll("scroller",{hScrollbar:false,vScrollbar:false});
+		    var oWrap = $(".main div");
+			//var oImg = $(".main #img");
+			//var oNick = $(".main #nickname");
+			//var oSign = $(".main #signnature"); 
+			//var dataList = "";
+			//var dataLength = new Array();			
+			$("#btn").on("tap",function(ev){
+				ev.preventDefault();
+				DoAjax();
+				scroll.refresh();				
+			})
+			function DoAjax(){
+				
+				var $name = $("#name").val();			
+				$.ajax({
+					url:"http://localhost:8080/Proxy/FootBall/user/json/queryall.do",
+					data:{"keyword":$name,"loginsuserid":"bb","page.pageNo":1},
+					//dataType:"json",什么时候指定
+					success:function(data){
+						var $data = JSON.parse(data);/*把json字符串转化成json对象*/
+						var html = "";/*拉数据的时候结构也要写在js里吗*/
+						dataList = $data.data.userlist;
+						dataLength = dataList.length;
+						for( var i = 0; i< dataLength ;i++){
+							html ='<dl><dt><img src="http://101.200.173.217:8080/FootBall'+dataList[i].avatarpath +'"/></dt><dd><p>'+dataList[i].nickname+'</p><p>'+dataList[i].signnature+'</p></dd></dl>';
+							oWrap[0].innerHTML += html;/*把jquery对象转成原生js对象*/
+							scroll.refresh();/*添加元素后要及时更新！*/	
+						}
+					}
+				})
+			}	
+			
+		</script>
+	</body>
+</html>
